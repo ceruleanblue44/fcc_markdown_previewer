@@ -1,0 +1,100 @@
+// @import-normalize; /* bring in normalize.css styles */
+/* rest of app styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+$backgroundColor: #DFF6FD;
+$outputColor:  #FFFFFF;
+
+// $breakpoints: (
+//   xs: 576px,
+//   sm: 768px,
+//   md: 992px,
+//   lg: 1200px
+// );
+
+* {
+  box-sizing: border-box;
+  // margin: 0;
+  // padding: 0; 
+  // The reason why the lists and the blockquote were not indented properly
+}
+
+body {
+  background-color: $backgroundColor;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  // padding: 0;
+
+  .input {
+    width: 50%;
+    margin: 1em 0.5em 1em 1em;
+
+    textarea {
+      width: 100%;
+      height: 100vh;
+      font-size: 0.9em;
+      padding: 1em;
+    }
+  }
+  .output {
+    width: 50%;
+    margin: 1em 1em 1em 0.5em;
+    
+      .output-area {
+        width: 100%;
+        height: 100vh;
+        background-color: $outputColor;
+        padding: 1em;
+        border: 1px solid black;
+        overflow: auto;
+      }
+  }
+
+  .input-header, .output-header {
+    height: 5vh;
+
+    h3 {
+      padding-left: 0.2em;
+    }
+  }
+  
+  img {
+    width: 30%;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .input, .output {
+      width: 95%;
+      margin: auto;
+      .input-header, .output-header {
+        height: 4vh;
+      }
+      textarea, .output-area {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+      }
+    }
+  }
+  
+}
+
+
+
+// #preview {
+//   blockquote {
+//     color: red;
+//   }
+// }
